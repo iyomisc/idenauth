@@ -1,0 +1,4 @@
+discord.py
+eth_keys
+pycryptodome
+rlp
