@@ -68,6 +68,7 @@ Moreover it adds some competition spirit, pleasure to "flex" some muscle by disp
 This goes beyond the Idena discord itself, since we already are in contact with other discord admins.  
 Generic Discords - not directly related to Idena are also likely to integrate this bot, thus making the Idena inovative solution known to a wider audience.
 
+Donation address: 0xf2cc549874f366b66b11eb7bb3ad5a66343ce369
 
 ## Licence
 MIT licence
