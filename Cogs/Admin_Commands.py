@@ -15,7 +15,8 @@ class Admin(commands.Cog, name="ADMIN ONLY"):
 
     @commands.command(name="update_roles",
                       brief="ADMIN ONLY",
-                      help="Updates Roles")
+                      help="Updates Roles",
+                      aliases=["updateroles", "update roles"])
     async def update_roles(self, ctx:Context):
         """Admin command"""
         if ctx.message.author.id not in self.b.CONFIG["admins"]:

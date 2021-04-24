@@ -18,7 +18,8 @@ class Public(commands.Cog, name="Available for everyone"):
 
     @commands.command(name="status",
                       brief="Updates your status",
-                      help="If you are logged in it retrieves new data from the api to update your status")
+                      help="If you are logged in it retrieves new data from the api to update your status",
+                      aliases=["state","update","refresh"])
     async def status(self, ctx):
         """Updates your status after you logged in"""
         if not auth.db.is_token_auth(str(ctx.message.author.id)):
@@ -41,14 +42,18 @@ class Public(commands.Cog, name="Available for everyone"):
 
     @commands.command(name="logout",
                       brief="Logs you out",
-                      help="Unlinks your address from this account")
+                      help="Unlinks your address from this account",
+                      aliases=["lo","lgout","logou"])
     async def logout(self, ctx):
         """Unlinks your address from this account"""
         auth.db.remove_token(str(ctx.message.author.id))
         await Utils.role_remover.remove_roles(ctx.message.author, self.b, self.b.Roles)
         await ctx.message.add_reaction("👍")
 
-    @commands.command()
+    @commands.command(name="login",
+                      brief="Logs you in",
+                      help="Sends you a link to authenticate yourself",
+                      aliases=["li","lgin","logi","validate"])
     async def login(self, ctx:discord.ext.commands.Context):
         """Gives a link to login"""
         if auth.db.is_token_auth(str(ctx.message.author.id)):
@@ -63,3 +68,5 @@ class Public(commands.Cog, name="Available for everyone"):
             "Login with {}{}\nThen update your status with `{}status`".format("https://idenauth.dragginator.com/auth/",
                                                                               ctx.message.author.id, ctx.prefix))
         await ctx.message.add_reaction("👍")
+
+
