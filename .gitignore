@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Personal Data (Server Specific)
+data/status.json
+bot_config.json
