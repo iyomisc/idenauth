@@ -51,6 +51,7 @@ Added all Cogs. Now starting
 
 @bot.event
 async def on_ready():
+    await bot.change_presence(activity=discord.Game(name='Idena - Use {} to message me'.format(PREFIX)))
     print("Started!")
 
 
