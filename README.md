@@ -70,5 +70,11 @@ Generic Discords - not directly related to Idena are also likely to integrate th
 
 Donation address: 0xf2cc549874f366b66b11eb7bb3ad5a66343ce369
 
+## Contributers
+
+[@iyomisc](https://github.com/iyomisc) Initial Creation, Donation adress: 0xf2cc549874f366b66b11eb7bb3ad5a66343ce369
+
+[@The_Bow_Hunter](https://github.com/The-Bow-Hunter) Refactoring, smaller additions, Donation adress: 0x590a5c6002f45e26cf8d818299ce35925e5f6732
+
 ## Licence
 MIT licence
