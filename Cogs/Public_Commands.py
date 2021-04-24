@@ -2,9 +2,8 @@ import discord.ext.commands
 from discord.ext import commands
 from discord.utils import get
 
-from idena_auth.auth import auth
-from Utils.guild_role_updater import update_guild_roles
 import Utils.role_remover
+from idena_auth.auth import auth
 
 
 class Public(commands.Cog, name="Available for everyone"):
@@ -19,7 +18,8 @@ class Public(commands.Cog, name="Available for everyone"):
     @commands.command(name="status",
                       brief="Updates your status",
                       help="If you are logged in it retrieves new data from the api to update your status",
-                      aliases=["state","update","refresh"])
+                      aliases=["state", "update", "refresh"])
+    @commands.cooldown(3, 60, commands.BucketType.user)
     async def status(self, ctx):
         """Updates your status after you logged in"""
         if not auth.db.is_token_auth(str(ctx.message.author.id)):
@@ -43,7 +43,8 @@ class Public(commands.Cog, name="Available for everyone"):
     @commands.command(name="logout",
                       brief="Logs you out",
                       help="Unlinks your address from this account",
-                      aliases=["lo","lgout","logou"])
+                      aliases=["lo", "lgout", "logou"])
+    @commands.cooldown(2, 60, commands.BucketType.user)
     async def logout(self, ctx):
         """Unlinks your address from this account"""
         auth.db.remove_token(str(ctx.message.author.id))
@@ -53,8 +54,9 @@ class Public(commands.Cog, name="Available for everyone"):
     @commands.command(name="login",
                       brief="Logs you in",
                       help="Sends you a link to authenticate yourself",
-                      aliases=["li","lgin","logi","validate"])
-    async def login(self, ctx:discord.ext.commands.Context):
+                      aliases=["li", "lgin", "logi", "validate"])
+    @commands.cooldown(3, 60, commands.BucketType.user)
+    async def login(self, ctx: discord.ext.commands.Context):
         """Gives a link to login"""
         if auth.db.is_token_auth(str(ctx.message.author.id)):
             address = auth.db.get_address(str(ctx.message.author.id))
@@ -69,4 +71,20 @@ class Public(commands.Cog, name="Available for everyone"):
                                                                               ctx.message.author.id, ctx.prefix))
         await ctx.message.add_reaction("👍")
 
+    @login.error
+    async def spam_error(self, ctx, error):
+        if isinstance(error, commands.CommandOnCooldown):
+            await ctx.reply(f"Stop Spamming! Try again in {error.retry_after:.2f}s.",
+                            delete_after=15)
 
+    @logout.error
+    async def spam_error(self, ctx, error):
+        if isinstance(error, commands.CommandOnCooldown):
+            await ctx.reply(f"Stop Spamming! Try again in {error.retry_after:.2f}s.",
+                            delete_after=15)
+
+    @status.error
+    async def spam_error(self, ctx, error):
+        if isinstance(error, commands.CommandOnCooldown):
+            await ctx.reply(f"Stop Spamming! Try again in {error.retry_after:.2f}s.",
+                            delete_after=15)
