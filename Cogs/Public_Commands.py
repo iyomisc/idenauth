@@ -105,5 +105,4 @@ class Public(commands.Cog, name="Available for everyone"):
         embed.add_field(name="Donate to bot devs",
                         value="iyomisc: 0xf2cc549874f366b66b11eb7bb3ad5a66343ce369 \n "
                               "The_Bow_Hunter: 0x590a5c6002f45e26cf8d818299ce35925e5f6732")
-
         await ctx.reply(embed=embed, delete_after=40)
