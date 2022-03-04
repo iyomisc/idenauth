@@ -26,6 +26,7 @@ The bot got a very warm welcome and was used straight away by many users.
 Discord admin are now thinking of specific channels reserved to the different identity levels.
 
 - Idena Discord https://discord.gg/8BusRj7
+- Qortal Project Official Discord Community Server https://discord.com/invite/54UyhB7
 - (More to come)
 
 Do you use the bot? please open an issue or PR to be added there.

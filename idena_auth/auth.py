@@ -23,7 +23,7 @@ class Auth:
 
     def get_dna_url(self, token=None, get_token=False):
         token = self.db.new_token(token)
-        url = "dna://signin/v1?token={}&callback_url={}&nonce_endpoint={}&authentication_endpoint={}"
+        url = "https://app.idena.io/dna/signin?token={}&callback_url={}&nonce_endpoint={}&authentication_endpoint={}"
         url = url.format(token, quote(CONFIG["callback_url"]), quote(CONFIG["nonce_endpoint"]), quote(CONFIG["authentication_endpoint"]))
         if CONFIG["favicon_url"]:
             url += "&favicon_url={}".format(quote(CONFIG["favicon_url"]))
