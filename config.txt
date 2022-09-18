@@ -1,6 +1,6 @@
 session_duration=-1
 db_path=data/auth.db
-base_url=https://idenauth.dragginator.com/auth
-callback_url=https://idenauth.dragginator.com/
-nonce_endpoint=https://idenauth.dragginator.com/auth/nonce
-authentication_endpoint=https://idenauth.dragginator.com/auth/authentication
+base_url=https://discordauth.idena.site/auth
+callback_url=https://discordauth.idena.site/
+nonce_endpoint=https://discordauth.idena.site/auth/nonce
+authentication_endpoint=https://discordauth.idena.site/auth/authentication
