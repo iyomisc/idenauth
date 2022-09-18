@@ -27,15 +27,14 @@ Discord admin are now thinking of specific channels reserved to the different id
 
 - Idena Discord https://discord.gg/8BusRj7
 - Qortal Project Official Discord Community Server https://discord.com/invite/54UyhB7
-- (More to come)
 
 Do you use the bot? please open an issue or PR to be added there.
 
 
 ## Installation
 
-### How to add to my discord server?
-Contact Iyomisc on discord or twitter @iyomisc
+### How to add bot to your discord server?
+Contact Rioda on Telegram or Twitter @realRioda
 
 **Benefits of adding the hosted for you instance:**  
 The hosted for you service is free and does not require installation or maintenance from you.  
@@ -48,11 +47,13 @@ At epoch change, the roles will be auto updated with no action from your part.
 
 Idenauth uses Python3 (min 3.5.3 required) and is based upon discord.py rewrite 
 - install the requirements `pip3 install -r requirements.txt`
+- create roles in your Discord server: Logged, Candidate, Newbie, Verified, Human, Suspended, Zombie.
 - create a discord bot, get a token, register and invite (Like any other bot)
 - configure the access token in the config `config.json` and start the bot `python3 bot.py`
 - configure `config.txt` and start the server `server.py`
 
-Stay informed of updates by watching the github repo or via twitter: @iyomisc
+
+Stay informed of updates by watching the github repo
 
 
 ## Idena Hackathon

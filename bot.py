@@ -10,7 +10,7 @@ with open("bot_config.json") as f:
     
 with open(CONFIG["status_file"]) as f:
     STATUS = json.load(f)
-ROLES = {"": "Logged", "Candidate": "Logged", "Newbie": "Newbie", "Verified": "Verified", "Human": "Human", "Suspended": "Suspended", "Zombie": "Zombie"}
+ROLES = {"": "Logged", "Candidate": "Candidate", "Newbie": "Newbie", "Verified": "Verified", "Human": "Human", "Suspended": "Suspended", "Zombie": "Zombie"}
 
 PREFIX = "auth/"
 bot = commands.Bot(command_prefix=PREFIX)
