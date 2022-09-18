@@ -44,7 +44,7 @@ class Application(tornado.web.Application):
         super(Application, self).__init__(handlers)
 
 
-def start(port=443):
+def start(port=80):
     app = Application()
     app.listen(port)
     tornado.ioloop.IOLoop.current().start()
