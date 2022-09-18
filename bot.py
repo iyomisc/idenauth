@@ -62,7 +62,7 @@ async def login(ctx):
         await ctx.message.author.send("You are already logged with {} ({})\nYou can logout using `!logout`".format(address, auth.db.get_address_status(address)))
         return
     auth.get_dna_url(token=str(ctx.message.author.id))
-    await ctx.message.author.send("Login with {}{}\nThen update your status with `{}status`".format("https://idenauth.dragginator.com/auth/", ctx.message.author.id, PREFIX))
+    await ctx.message.author.send("Login with {}{}\nThen update your status with `{}status`".format("https://discordauth.idena.site/auth/", ctx.message.author.id, PREFIX))
     await ctx.message.add_reaction("👍")
     
 @bot.command()
