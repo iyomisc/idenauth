@@ -49,7 +49,9 @@ Idenauth uses Python3 (min 3.5.3 required) and is based upon discord.py rewrite
 - install the requirements `pip3 install -r requirements.txt`
 - create roles in your Discord server: Logged, Candidate, Newbie, Verified, Human, Suspended, Zombie.
 - create a discord bot, get a token, register and invite (Like any other bot)
+- place a role of a bot, higher than other identity status roles so it can manage them
 - create file `bot_config.json` and configure the access token in it
+
 `{"token": "your_bot_token", "admins": [your_discord_id], "status_file": "data/status.json"}`
 - start the bot `python3 bot.py`
 - configure `config.txt` and start the server `python3 server.py`
