@@ -45,17 +45,38 @@ At epoch change, the roles will be auto updated with no action from your part.
 
 ### How to run a self hosted instance?
 
-Idenauth uses Python3 (min 3.5.3 required) and is based upon discord.py rewrite 
-- install the requirements `pip3 install -r requirements.txt`
+Idenauth uses Python3 (min 3.5.3 required) and is based upon discord.py rewrite
+
 - create roles in your Discord server: Logged, Candidate, Newbie, Verified, Human, Suspended, Zombie.
-- create a discord bot, get a token, register and invite (Like any other bot)
+- create a discord bot, get a token, register and invite it (Like any other bot)
 - place a role of a bot, higher than other identity status roles so it can manage them
-- create file `bot_config.json` and configure the access token in it
+- example is based on ubuntu server
+
+```shell
+apt update && apt upgrade -y
+reboot now
+git clone https://github.com/rioda-org/idenauth
+cd idenauth
+apt install python3-pip -y
+python3 --version
+pip3 install -r requirements.txt
+```
+- create file `bot_config.json` and configure the access token and your Discord ID in it
+
+```shell
+nano bot_config.json
+```
 
 `{"token": "your_bot_token", "admins": [your_discord_id], "status_file": "data/status.json"}`
 - start the bot `python3 bot.py`
 - configure `config.txt` and start the server `python3 server.py`
-
+- later on, after updates, you can restart it using
+```shell
+killall screen
+git pull origin master
+screen -dmS bot python3 bot.py
+screen -dmS server python3 server.py
+```
 
 Stay informed of updates by watching the github repo
 
