@@ -1,3 +1,3 @@
 from idena_auth.server.tornado_server import start
 
-start(port=8881)
+start(port=443)
