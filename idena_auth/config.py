@@ -1,5 +1,5 @@
 
-CONFIG = {"session_duration": -1, "db_path": "data/auth.db", "callback_url": "http://localhost", "nonce_endpoint": "http://localhost/auth/nonce/", "authentication_endpoint": "http://localhost/auth/authentication/", "favicon_url": "http://localhost/favicon.ico"}
+CONFIG = {"session_duration": -1, "db_path": "data/auth.db", "callback_url": "http://localhost", "nonce_endpoint": "http://localhost/auth/nonce/", "authentication_endpoint": "http://localhost/auth/authentication/", "favicon_url": ""}
 
 
 with open("config.txt") as f:
